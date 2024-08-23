@@ -1,15 +1,21 @@
 //
 //  Home.swift
-//  academic-reminder
+//  academic_reminder
 //
-//  Created by Julia on 2024-08-23.
+//  Created by Julia on 2024-08-21.
 //
 
 import SwiftUI
 
 struct Home: View {
+    
+    @State var currentDate: Date = Date()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView(.vertical, showsIndicators: false){
+            VStack(spacing: 20){//DatePickerView
+                DatePickerView(currentDate: $currentDate)
+            }
+        }
     }
 }
 
