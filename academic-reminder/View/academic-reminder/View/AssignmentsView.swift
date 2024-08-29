@@ -95,13 +95,12 @@ struct AssignmentsHolder: View {
 struct AssignmentRegister: View {
     @Binding var assignments: [Assignment]
     @Binding var showAddAssignmentSheet: Bool
-    
     @State private var newAssignmentName: String = ""
     @State private var newStatus: String = "Not started"
     @State private var selectedType: String = ""
     @State private var newCourseName: String = ""
     @State private var newWeight: String = ""
-    @State private var newDue: Date = Date()
+    @State private var date: Date = Date()
     @State private var showDatePickerView: Bool = false
     
     var body: some View {
@@ -162,20 +161,15 @@ struct AssignmentRegister: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
             }
-//            HStack {
-//                Text("Due:")
-//                Button(action: {
-//                    showDatePickerView.toggle()
-//                }) {
-//                    Text("\(formattedDueDate)")
-//                        .textFieldStyle(RoundedBorderTextFieldStyle())
-//                        .padding()
-//                    Spacer()
-//                }
-//            }
-            DatePickerViewPopover(selectedDate: $newDue)
-
-            //
+            HStack {
+                DatePicker(
+                    "Due Date: ",
+                    selection: $date,
+                    in: Date()...,
+                    displayedComponents: [.date, .hourAndMinute]
+                )
+            }
+            
             HStack {
                 Text("Reminder: ")
                 Button(action: {
@@ -194,7 +188,7 @@ struct AssignmentRegister: View {
                     name: newAssignmentName,
                     status: newStatus,
                     course: newCourseName,
-                    due: newDue,
+                    due: date,
                     type: selectedType,
                     weight: newWeight
                 )
@@ -203,7 +197,7 @@ struct AssignmentRegister: View {
                 newAssignmentName = ""
                 newStatus = "Not started"
                 newCourseName = ""
-                newDue = Date()
+                date = Date()
                 selectedType = ""
                 newWeight = ""
                 showAddAssignmentSheet = false
@@ -218,7 +212,7 @@ struct AssignmentRegister: View {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
         formatter.timeStyle = .short
-        return formatter.string(from: newDue)
+        return formatter.string(from: date)
     }
 }
 struct Assignment: Identifiable {

@@ -12,15 +12,13 @@
 		A32928EE2C790866007B1869 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A32928ED2C790866007B1869 /* Assets.xcassets */; };
 		A32928F12C790866007B1869 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A32928F02C790866007B1869 /* Preview Assets.xcassets */; };
 		A360D7452C791E67001552F6 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A360D7432C791E67001552F6 /* DateValue.swift */; };
-		A38C45B82C813DF8009AB615 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C45AF2C813DF8009AB615 /* DatePickerView.swift */; };
-		A38C45B92C813DF8009AB615 /* CoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C45B02C813DF8009AB615 /* CoursesView.swift */; };
-		A38C45BA2C813DF8009AB615 /* DatePickerPopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C45B12C813DF8009AB615 /* DatePickerPopOver.swift */; };
-		A38C45BB2C813DF8009AB615 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C45B22C813DF8009AB615 /* CalenderView.swift */; };
-		A38C45BC2C813DF8009AB615 /* AssignmentRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C45B32C813DF8009AB615 /* AssignmentRegisterView.swift */; };
-		A38C45BD2C813DF8009AB615 /* AssignmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C45B42C813DF8009AB615 /* AssignmentsView.swift */; };
-		A38C45BE2C813DF8009AB615 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C45B52C813DF8009AB615 /* DBManager.swift */; };
-		A38C45BF2C813DF8009AB615 /* GradesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C45B62C813DF8009AB615 /* GradesView.swift */; };
-		A38C45C02C813DF8009AB615 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C45B72C813DF8009AB615 /* Home.swift */; };
+		A360D74E2C791EBA001552F6 /* AssignmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A360D7462C791EBA001552F6 /* AssignmentsView.swift */; };
+		A360D74F2C791EBA001552F6 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A360D7472C791EBA001552F6 /* CalenderView.swift */; };
+		A360D7502C791EBA001552F6 /* CoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A360D7482C791EBA001552F6 /* CoursesView.swift */; };
+		A360D7512C791EBA001552F6 /* DatePickerPopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A360D7492C791EBA001552F6 /* DatePickerPopOver.swift */; };
+		A360D7522C791EBA001552F6 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A360D74A2C791EBA001552F6 /* DatePickerView.swift */; };
+		A360D7532C791EBA001552F6 /* GradesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A360D74B2C791EBA001552F6 /* GradesView.swift */; };
+		A360D7542C791EBA001552F6 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = A360D74C2C791EBA001552F6 /* Home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,15 +28,13 @@
 		A32928ED2C790866007B1869 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A32928F02C790866007B1869 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A360D7432C791E67001552F6 /* DateValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
-		A38C45AF2C813DF8009AB615 /* DatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatePickerView.swift; path = "academic-reminder/View/DatePickerView.swift"; sourceTree = "<group>"; };
-		A38C45B02C813DF8009AB615 /* CoursesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoursesView.swift; path = "academic-reminder/View/CoursesView.swift"; sourceTree = "<group>"; };
-		A38C45B12C813DF8009AB615 /* DatePickerPopOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatePickerPopOver.swift; path = "academic-reminder/View/DatePickerPopOver.swift"; sourceTree = "<group>"; };
-		A38C45B22C813DF8009AB615 /* CalenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalenderView.swift; path = "academic-reminder/View/CalenderView.swift"; sourceTree = "<group>"; };
-		A38C45B32C813DF8009AB615 /* AssignmentRegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssignmentRegisterView.swift; path = "academic-reminder/View/AssignmentRegisterView.swift"; sourceTree = "<group>"; };
-		A38C45B42C813DF8009AB615 /* AssignmentsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssignmentsView.swift; path = "academic-reminder/View/AssignmentsView.swift"; sourceTree = "<group>"; };
-		A38C45B52C813DF8009AB615 /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DBManager.swift; path = "academic-reminder/View/DBManager.swift"; sourceTree = "<group>"; };
-		A38C45B62C813DF8009AB615 /* GradesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradesView.swift; path = "academic-reminder/View/GradesView.swift"; sourceTree = "<group>"; };
-		A38C45B72C813DF8009AB615 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Home.swift; path = "academic-reminder/View/Home.swift"; sourceTree = "<group>"; };
+		A360D7462C791EBA001552F6 /* AssignmentsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentsView.swift; sourceTree = "<group>"; };
+		A360D7472C791EBA001552F6 /* CalenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderView.swift; sourceTree = "<group>"; };
+		A360D7482C791EBA001552F6 /* CoursesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesView.swift; sourceTree = "<group>"; };
+		A360D7492C791EBA001552F6 /* DatePickerPopOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerPopOver.swift; sourceTree = "<group>"; };
+		A360D74A2C791EBA001552F6 /* DatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		A360D74B2C791EBA001552F6 /* GradesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradesView.swift; sourceTree = "<group>"; };
+		A360D74C2C791EBA001552F6 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,15 +96,13 @@
 		A360D74D2C791EBA001552F6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A38C45B32C813DF8009AB615 /* AssignmentRegisterView.swift */,
-				A38C45B42C813DF8009AB615 /* AssignmentsView.swift */,
-				A38C45B22C813DF8009AB615 /* CalenderView.swift */,
-				A38C45B02C813DF8009AB615 /* CoursesView.swift */,
-				A38C45B12C813DF8009AB615 /* DatePickerPopOver.swift */,
-				A38C45AF2C813DF8009AB615 /* DatePickerView.swift */,
-				A38C45B52C813DF8009AB615 /* DBManager.swift */,
-				A38C45B62C813DF8009AB615 /* GradesView.swift */,
-				A38C45B72C813DF8009AB615 /* Home.swift */,
+				A360D7462C791EBA001552F6 /* AssignmentsView.swift */,
+				A360D7472C791EBA001552F6 /* CalenderView.swift */,
+				A360D7482C791EBA001552F6 /* CoursesView.swift */,
+				A360D7492C791EBA001552F6 /* DatePickerPopOver.swift */,
+				A360D74A2C791EBA001552F6 /* DatePickerView.swift */,
+				A360D74B2C791EBA001552F6 /* GradesView.swift */,
+				A360D74C2C791EBA001552F6 /* Home.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -183,18 +177,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A38C45BC2C813DF8009AB615 /* AssignmentRegisterView.swift in Sources */,
-				A38C45BD2C813DF8009AB615 /* AssignmentsView.swift in Sources */,
 				A360D7452C791E67001552F6 /* DateValue.swift in Sources */,
-				A38C45BA2C813DF8009AB615 /* DatePickerPopOver.swift in Sources */,
-				A38C45B92C813DF8009AB615 /* CoursesView.swift in Sources */,
-				A38C45BE2C813DF8009AB615 /* DBManager.swift in Sources */,
-				A38C45BB2C813DF8009AB615 /* CalenderView.swift in Sources */,
-				A38C45BF2C813DF8009AB615 /* GradesView.swift in Sources */,
 				A32928EC2C790865007B1869 /* ContentView.swift in Sources */,
-				A38C45B82C813DF8009AB615 /* DatePickerView.swift in Sources */,
-				A38C45C02C813DF8009AB615 /* Home.swift in Sources */,
+				A360D7542C791EBA001552F6 /* Home.swift in Sources */,
+				A360D7532C791EBA001552F6 /* GradesView.swift in Sources */,
 				A32928EA2C790865007B1869 /* academic_reminderApp.swift in Sources */,
+				A360D74F2C791EBA001552F6 /* CalenderView.swift in Sources */,
+				A360D74E2C791EBA001552F6 /* AssignmentsView.swift in Sources */,
+				A360D7512C791EBA001552F6 /* DatePickerPopOver.swift in Sources */,
+				A360D7522C791EBA001552F6 /* DatePickerView.swift in Sources */,
+				A360D7502C791EBA001552F6 /* CoursesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,15 @@
+//
+//  Podfile.swift
+//  academic-reminder
+//
+//  Created by Julia on 2024-08-29.
+//
+
+platform :ios, '13.0'
+
+target 'academic_reminder' do
+  use_frameworks!
+
+  # SQLite.swiftを追加
+  pod 'SQLite.swift', '~> 0.12.2'
+end

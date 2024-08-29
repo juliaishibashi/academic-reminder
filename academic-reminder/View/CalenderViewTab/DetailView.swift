@@ -1,18 +1,28 @@
-//
-//  DetailView.swift
-//  academic-reminder
-//
-//  Created by Julia on 2024-08-29.
-//
-
 import SwiftUI
 
 struct DetailView: View {
+    @Binding var showDetailView: Bool
+    @Binding var darkMode: Bool
+    //binging has to be connect with state propertiy
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Button{
+                showDetailView.toggle()
+                darkMode.toggle()
+            } label: {
+                Text("dismiss")
+            }
+            Toggle(isOn: $darkMode){
+                Text("dark mode")
+                    .foregroundStyle(darkMode ? .white : .black)
+            }
+        }
     }
 }
-
-#Preview {
-    DetailView()
+    
+struct DetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        DetailView(showDetailView: .constant(false), darkMode: .constant(false))
+    }
 }

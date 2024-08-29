@@ -1,15 +1,29 @@
-//
-//  plactice.swift
-//  academic-reminder
-//
-//  Created by Julia on 2024-08-29.
-//
-
 import SwiftUI
 
 struct plactice: View {
+    //state is origin (parent) view
+    //binding is detail (child) view
+    @State private var darkMode = false
+    @State private var showDetailView = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            Color(darkMode ? .black : .white)
+            VStack{
+                Button{
+                    showDetailView.toggle()
+                } label: {
+                    Text("show detail view")
+                }
+            }
+            .padding()
+        }
+        .fullScreenCover(isPresented: $showDetailView, content: {
+            //if $showDetailView is true it will open DetailView()
+            DetailView(showDetailView: $showDetailView, darkMode: $darkMode)
+            // "showDetailView: $showDetailView" connect w/ @binding
+        })
+        .ignoresSafeArea() //上のスペース
     }
 }
 

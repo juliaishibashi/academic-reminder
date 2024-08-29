@@ -144,19 +144,47 @@ struct DateCardView: View {
         if value.day != 0 {
             Text("\(value.day)")
                 .font(.title3.bold())
-                .frame(maxWidth: .infinity)
-                .frame(height: 40)
-                .background(value.date == selectedDate ? Color.blue.opacity(0.3) : Color.clear)
+                .frame(maxWidth: .infinity, minHeight: 40)
+                .background(
+                    value.date == selectedDate ? Color.white.opacity(0.3) : Color.clear
+                )
+                .clipShape(Circle())
+                .overlay(
+                    Circle()
+                        .stroke(
+                            value.date == selectedDate ? Color.gray : Color.clear,
+                            lineWidth: 2
+                        )
+                )
                 .onTapGesture {
                     selectedDate = value.date
+                    print("Date selected: \(formatDate(selectedDate))")
                 }
         } else {
             Color.clear
                 .frame(height: 40)
         }
     }
+    
+    private func formatDate(_ date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        return dateFormatter.string(from: date)
+    }
 }
+
 
 #Preview {
     ContentView()
+}
+struct DatePickerView_Previews: PreviewProvider {
+    static var previews: some View {
+        // Default Preview
+        DatePickerView(currentDate: .constant(Date()))
+            .previewDisplayName("Default Preview")
+        
+        // Custom Date Preview (e.g., a specific date or month)
+        DatePickerView(currentDate: .constant(Calendar.current.date(from: DateComponents(year: 2024, month: 8, day: 15))!))
+            .previewDisplayName("Custom Date Preview")
+    }
 }
