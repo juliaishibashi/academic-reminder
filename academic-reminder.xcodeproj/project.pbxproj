@@ -12,15 +12,22 @@
 		A32928EE2C790866007B1869 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A32928ED2C790866007B1869 /* Assets.xcassets */; };
 		A32928F12C790866007B1869 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A32928F02C790866007B1869 /* Preview Assets.xcassets */; };
 		A360D7452C791E67001552F6 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A360D7432C791E67001552F6 /* DateValue.swift */; };
-		A38C45B82C813DF8009AB615 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C45AF2C813DF8009AB615 /* DatePickerView.swift */; };
-		A38C45B92C813DF8009AB615 /* CoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C45B02C813DF8009AB615 /* CoursesView.swift */; };
-		A38C45BA2C813DF8009AB615 /* DatePickerPopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C45B12C813DF8009AB615 /* DatePickerPopOver.swift */; };
-		A38C45BB2C813DF8009AB615 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C45B22C813DF8009AB615 /* CalenderView.swift */; };
-		A38C45BC2C813DF8009AB615 /* AssignmentRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C45B32C813DF8009AB615 /* AssignmentRegisterView.swift */; };
-		A38C45BD2C813DF8009AB615 /* AssignmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C45B42C813DF8009AB615 /* AssignmentsView.swift */; };
-		A38C45BE2C813DF8009AB615 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C45B52C813DF8009AB615 /* DBManager.swift */; };
-		A38C45BF2C813DF8009AB615 /* GradesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C45B62C813DF8009AB615 /* GradesView.swift */; };
-		A38C45C02C813DF8009AB615 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C45B72C813DF8009AB615 /* Home.swift */; };
+		A39847842C81CB06006B72FF /* AssignmentRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A398476F2C81CB06006B72FF /* AssignmentRegisterView.swift */; };
+		A39847852C81CB06006B72FF /* AssignmentsHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847702C81CB06006B72FF /* AssignmentsHolderView.swift */; };
+		A39847862C81CB06006B72FF /* AssignmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847712C81CB06006B72FF /* AssignmentsView.swift */; };
+		A39847872C81CB06006B72FF /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847722C81CB06006B72FF /* DatePickerView.swift */; };
+		A39847882C81CB06006B72FF /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847732C81CB06006B72FF /* ReminderView.swift */; };
+		A39847892C81CB06006B72FF /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847752C81CB06006B72FF /* CalendarView.swift */; };
+		A398478A2C81CB06006B72FF /* database.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847762C81CB06006B72FF /* database.swift */; };
+		A398478B2C81CB06006B72FF /* DateSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847772C81CB06006B72FF /* DateSample.swift */; };
+		A398478C2C81CB06006B72FF /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847782C81CB06006B72FF /* DetailView.swift */; };
+		A398478D2C81CB06006B72FF /* EventsCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847792C81CB06006B72FF /* EventsCalendarView.swift */; };
+		A398478E2C81CB06006B72FF /* plactice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A398477A2C81CB06006B72FF /* plactice.swift */; };
+		A39847912C81CB06006B72FF /* CoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A398477E2C81CB06006B72FF /* CoursesView.swift */; };
+		A39847922C81CB06006B72FF /* DatePickerPopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A398477F2C81CB06006B72FF /* DatePickerPopOver.swift */; };
+		A39847932C81CB06006B72FF /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847802C81CB06006B72FF /* DBManager.swift */; };
+		A39847942C81CB06006B72FF /* GradesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847812C81CB06006B72FF /* GradesView.swift */; };
+		A39847952C81CB06006B72FF /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847822C81CB06006B72FF /* Home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,15 +37,22 @@
 		A32928ED2C790866007B1869 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A32928F02C790866007B1869 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A360D7432C791E67001552F6 /* DateValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
-		A38C45AF2C813DF8009AB615 /* DatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatePickerView.swift; path = "academic-reminder/View/DatePickerView.swift"; sourceTree = "<group>"; };
-		A38C45B02C813DF8009AB615 /* CoursesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoursesView.swift; path = "academic-reminder/View/CoursesView.swift"; sourceTree = "<group>"; };
-		A38C45B12C813DF8009AB615 /* DatePickerPopOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatePickerPopOver.swift; path = "academic-reminder/View/DatePickerPopOver.swift"; sourceTree = "<group>"; };
-		A38C45B22C813DF8009AB615 /* CalenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalenderView.swift; path = "academic-reminder/View/CalenderView.swift"; sourceTree = "<group>"; };
-		A38C45B32C813DF8009AB615 /* AssignmentRegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssignmentRegisterView.swift; path = "academic-reminder/View/AssignmentRegisterView.swift"; sourceTree = "<group>"; };
-		A38C45B42C813DF8009AB615 /* AssignmentsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssignmentsView.swift; path = "academic-reminder/View/AssignmentsView.swift"; sourceTree = "<group>"; };
-		A38C45B52C813DF8009AB615 /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DBManager.swift; path = "academic-reminder/View/DBManager.swift"; sourceTree = "<group>"; };
-		A38C45B62C813DF8009AB615 /* GradesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradesView.swift; path = "academic-reminder/View/GradesView.swift"; sourceTree = "<group>"; };
-		A38C45B72C813DF8009AB615 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Home.swift; path = "academic-reminder/View/Home.swift"; sourceTree = "<group>"; };
+		A398476F2C81CB06006B72FF /* AssignmentRegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentRegisterView.swift; sourceTree = "<group>"; };
+		A39847702C81CB06006B72FF /* AssignmentsHolderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentsHolderView.swift; sourceTree = "<group>"; };
+		A39847712C81CB06006B72FF /* AssignmentsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentsView.swift; sourceTree = "<group>"; };
+		A39847722C81CB06006B72FF /* DatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		A39847732C81CB06006B72FF /* ReminderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
+		A39847752C81CB06006B72FF /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		A39847762C81CB06006B72FF /* database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = database.swift; sourceTree = "<group>"; };
+		A39847772C81CB06006B72FF /* DateSample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSample.swift; sourceTree = "<group>"; };
+		A39847782C81CB06006B72FF /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		A39847792C81CB06006B72FF /* EventsCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsCalendarView.swift; sourceTree = "<group>"; };
+		A398477A2C81CB06006B72FF /* plactice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = plactice.swift; sourceTree = "<group>"; };
+		A398477E2C81CB06006B72FF /* CoursesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesView.swift; sourceTree = "<group>"; };
+		A398477F2C81CB06006B72FF /* DatePickerPopOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerPopOver.swift; sourceTree = "<group>"; };
+		A39847802C81CB06006B72FF /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		A39847812C81CB06006B72FF /* GradesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradesView.swift; sourceTree = "<group>"; };
+		A39847822C81CB06006B72FF /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +85,7 @@
 		A32928E82C790865007B1869 /* academic-reminder */ = {
 			isa = PBXGroup;
 			children = (
-				A360D74D2C791EBA001552F6 /* View */,
+				A39847832C81CB06006B72FF /* View copy */,
 				A360D7442C791E67001552F6 /* Model */,
 				A32928E92C790865007B1869 /* academic_reminderApp.swift */,
 				A32928EB2C790865007B1869 /* ContentView.swift */,
@@ -97,20 +111,43 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		A360D74D2C791EBA001552F6 /* View */ = {
+		A39847742C81CB06006B72FF /* AssignmentView */ = {
 			isa = PBXGroup;
 			children = (
-				A38C45B32C813DF8009AB615 /* AssignmentRegisterView.swift */,
-				A38C45B42C813DF8009AB615 /* AssignmentsView.swift */,
-				A38C45B22C813DF8009AB615 /* CalenderView.swift */,
-				A38C45B02C813DF8009AB615 /* CoursesView.swift */,
-				A38C45B12C813DF8009AB615 /* DatePickerPopOver.swift */,
-				A38C45AF2C813DF8009AB615 /* DatePickerView.swift */,
-				A38C45B52C813DF8009AB615 /* DBManager.swift */,
-				A38C45B62C813DF8009AB615 /* GradesView.swift */,
-				A38C45B72C813DF8009AB615 /* Home.swift */,
+				A398476F2C81CB06006B72FF /* AssignmentRegisterView.swift */,
+				A39847702C81CB06006B72FF /* AssignmentsHolderView.swift */,
+				A39847712C81CB06006B72FF /* AssignmentsView.swift */,
+				A39847722C81CB06006B72FF /* DatePickerView.swift */,
+				A39847732C81CB06006B72FF /* ReminderView.swift */,
 			);
-			path = View;
+			path = AssignmentView;
+			sourceTree = "<group>";
+		};
+		A398477B2C81CB06006B72FF /* CalenderViewTab */ = {
+			isa = PBXGroup;
+			children = (
+				A39847752C81CB06006B72FF /* CalendarView.swift */,
+				A39847762C81CB06006B72FF /* database.swift */,
+				A39847772C81CB06006B72FF /* DateSample.swift */,
+				A39847782C81CB06006B72FF /* DetailView.swift */,
+				A39847792C81CB06006B72FF /* EventsCalendarView.swift */,
+				A398477A2C81CB06006B72FF /* plactice.swift */,
+			);
+			path = CalenderViewTab;
+			sourceTree = "<group>";
+		};
+		A39847832C81CB06006B72FF /* View copy */ = {
+			isa = PBXGroup;
+			children = (
+				A39847742C81CB06006B72FF /* AssignmentView */,
+				A398477B2C81CB06006B72FF /* CalenderViewTab */,
+				A398477E2C81CB06006B72FF /* CoursesView.swift */,
+				A398477F2C81CB06006B72FF /* DatePickerPopOver.swift */,
+				A39847802C81CB06006B72FF /* DBManager.swift */,
+				A39847812C81CB06006B72FF /* GradesView.swift */,
+				A39847822C81CB06006B72FF /* Home.swift */,
+			);
+			path = "View copy";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,17 +220,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A38C45BC2C813DF8009AB615 /* AssignmentRegisterView.swift in Sources */,
-				A38C45BD2C813DF8009AB615 /* AssignmentsView.swift in Sources */,
+				A39847842C81CB06006B72FF /* AssignmentRegisterView.swift in Sources */,
+				A398478C2C81CB06006B72FF /* DetailView.swift in Sources */,
+				A39847952C81CB06006B72FF /* Home.swift in Sources */,
+				A39847862C81CB06006B72FF /* AssignmentsView.swift in Sources */,
+				A398478B2C81CB06006B72FF /* DateSample.swift in Sources */,
+				A39847922C81CB06006B72FF /* DatePickerPopOver.swift in Sources */,
+				A398478E2C81CB06006B72FF /* plactice.swift in Sources */,
+				A39847852C81CB06006B72FF /* AssignmentsHolderView.swift in Sources */,
 				A360D7452C791E67001552F6 /* DateValue.swift in Sources */,
-				A38C45BA2C813DF8009AB615 /* DatePickerPopOver.swift in Sources */,
-				A38C45B92C813DF8009AB615 /* CoursesView.swift in Sources */,
-				A38C45BE2C813DF8009AB615 /* DBManager.swift in Sources */,
-				A38C45BB2C813DF8009AB615 /* CalenderView.swift in Sources */,
-				A38C45BF2C813DF8009AB615 /* GradesView.swift in Sources */,
+				A39847872C81CB06006B72FF /* DatePickerView.swift in Sources */,
+				A39847892C81CB06006B72FF /* CalendarView.swift in Sources */,
 				A32928EC2C790865007B1869 /* ContentView.swift in Sources */,
-				A38C45B82C813DF8009AB615 /* DatePickerView.swift in Sources */,
-				A38C45C02C813DF8009AB615 /* Home.swift in Sources */,
+				A39847942C81CB06006B72FF /* GradesView.swift in Sources */,
+				A39847912C81CB06006B72FF /* CoursesView.swift in Sources */,
+				A39847932C81CB06006B72FF /* DBManager.swift in Sources */,
+				A398478D2C81CB06006B72FF /* EventsCalendarView.swift in Sources */,
+				A39847882C81CB06006B72FF /* ReminderView.swift in Sources */,
+				A398478A2C81CB06006B72FF /* database.swift in Sources */,
 				A32928EA2C790865007B1869 /* academic_reminderApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
