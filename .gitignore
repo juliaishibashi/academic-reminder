@@ -7,3 +7,4 @@
 *.xcodeproj/project.pbxproj
 *.xcodeproj/xcuserdata
 *.xcodeproj/xcshareddata
+.DS_Store
