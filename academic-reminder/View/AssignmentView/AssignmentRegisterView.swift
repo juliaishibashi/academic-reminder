@@ -32,7 +32,7 @@ struct AssignmentRegisterView: View {
     @State private var showAddReminderSheet: Bool = false
     @State private var reminderTimes: [String] = []
     
-    private var dbManager = DatabaseManager()
+    private var dbManager = AssignmentDatabaseManager()
     
     init(showAddAssignmentSheet: Binding<Bool>) {
             self._showAddAssignmentSheet = showAddAssignmentSheet

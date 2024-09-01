@@ -4,9 +4,10 @@ struct ReminderView: View {
     @Binding var showAddReminderSheet: Bool
     @Binding var reminderTimes: [String]
     @State private var reminders: [Reminder] = [Reminder(remindValue: "", selectedOption: "")]
-
     
-    private var dbManager = DatabaseManager()
+    @State private var intError: String?
+    
+    private var dbManager = ReminderDatabaseManager()
     
     init(showAddReminderSheet: Binding<Bool>, reminderTimes: Binding<[String]>) {
         self._showAddReminderSheet = showAddReminderSheet
@@ -18,10 +19,7 @@ struct ReminderView: View {
             HStack {
                 Text("Reminder: ")
                 Button(action: {
-//                    reminders.append(Reminder(remindValue: "", selectedOption: ""))
-                    for reminder in reminders {
-                                        reminderTimes.append("\(reminder.remindValue) \(reminder.selectedOption) Before")
-                                    }
+                    reminders.append(Reminder(remindValue: "", selectedOption: ""))
                 }) {
                     Image(systemName: "plus.circle.fill")
                 }
@@ -30,17 +28,20 @@ struct ReminderView: View {
             .padding()
             
             ForEach(reminders.indices, id: \.self) { index in
-                AddReminderView(reminderIndex: index, reminders: $reminders)
+                AddReminderView(reminder: $reminders[index])
                     .id(index)
             }
 
             // Save button
             Button(action: {
-                // Save the reminder data here if needed
-                // dbManager.saveData(remindValue, selectedOption)
-                reminderTimes = reminders.map { "\($0.remindValue) \($0.selectedOption) Before" }
-
-                // Then close the sheet
+                for reminder in reminders {
+                    print("Checking reminder with value: \(reminder.remindValue) and option: \(reminder.selectedOption)")
+                    dbManager.saveReminder(
+                        remindValue: reminder.remindValue,
+                        selectedOption: reminder.selectedOption
+                    )
+                }
+                print("SAVED TO REMINDER DB: \(reminders.map { "\($0.remindValue) \($0.selectedOption)" }.joined(separator: ", "))")
                 showAddReminderSheet = false
             }) {
                 Text("Save")
@@ -59,39 +60,35 @@ struct ReminderView: View {
     }
     
     struct AddReminderView: View {
-        let reminderIndex: Int
-        @Binding var reminders: [Reminder]
-        @State private var remindValue: String = ""
-        @State private var selectedOption: String = ""
+        @Binding var reminder: Reminder
         
         var body: some View {
             HStack {
                 VStack {
                     HStack {
                         Text("Remind: ")
-                        TextField("Input integer", text: $remindValue)
+                        TextField("Input integer", text: $reminder.remindValue)
                             .frame(width: 50, height: 32)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                         
                         Menu {
                             Button(action: {
-                                selectedOption = "Minutes"
+                                reminder.selectedOption = "Minutes"
                             }) {
                                 Text("Minutes")
-                                    .padding()
                             }
                             Button(action: {
-                                selectedOption = "Hours"
+                                reminder.selectedOption = "Hours"
                             }) {
                                 Text("Hours")
                             }
                             Button(action: {
-                                selectedOption = "Days"
+                                reminder.selectedOption = "Days"
                             }) {
                                 Text("Days")
                             }
                             Button(action: {
-                                selectedOption = "Weeks"
+                                reminder.selectedOption = "Weeks"
                             }) {
                                 Text("Weeks").fixedSize()
                             }
@@ -102,7 +99,7 @@ struct ReminderView: View {
                                     .frame(width: 100, height: 32)
                                 
                                 HStack {
-                                    Text(selectedOption)
+                                    Text(reminder.selectedOption)
                                         .frame(maxWidth: 100, alignment: .leading)
                                     Image(systemName: "arrowtriangle.down.fill")
                                         .padding(.trailing, 10)
@@ -115,19 +112,18 @@ struct ReminderView: View {
                     .fixedSize()
                 }
                 Button(action: {
-                    reminders.remove(at: reminderIndex)
+                    // この行で reminder を reminders 配列から削除
                 }) {
                     Image(systemName: "minus.circle.fill")
                         .foregroundColor(.red)
                 }
             }
-        } // vstack
-    } // AddReminderView
-}  //reminderview
+        }
+    }
+}
 
 struct ReminderView_Previews: PreviewProvider {
     static var previews: some View {
         ReminderView(showAddReminderSheet: .constant(false), reminderTimes: .constant([]))
     }
 }
-

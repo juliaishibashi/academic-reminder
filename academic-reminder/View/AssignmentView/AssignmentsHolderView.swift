@@ -53,15 +53,15 @@
 //                                    .padding(.trailing, 10)
 //                            }
 //                        }
-//                        //                    } label: {
-//                        //                        HStack {
-//                        //                            Text(assignment.status)
-//                        //                                .padding(.leading, 10)
-//                        //                            Spacer()
-//                        //                            Image(systemName: "arrowtriangle.down.fill")
-//                        //                                .padding(.trailing, 10)
-//                        //                        }
-//                        //                    }
+//                                            } label: {
+//                                                HStack {
+//                                                    Text(assignment.status)
+//                                                        .padding(.leading, 10)
+//                                                    Spacer()
+//                                                    Image(systemName: "arrowtriangle.down.fill")
+//                                                        .padding(.trailing, 10)
+//                                                }
+//                                            }
 //                    }
 //                    .padding(.horizontal)
 //                    
@@ -82,16 +82,6 @@
 //        }
 //    }
 //}//AssignmentsHolderView
-//
-////struct Assignment: Identifiable {
-////    var id = UUID()
-////    var name: String
-////    var status: String
-////    var course: String
-////    var due: Date
-////    var type: String
-////    var weight: String
-////}
 //
 //struct AssignmentsHolderView_Previews: PreviewProvider {
 //    static var previews: some View {

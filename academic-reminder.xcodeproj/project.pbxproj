@@ -7,52 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A32928EA2C790865007B1869 /* academic_reminderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32928E92C790865007B1869 /* academic_reminderApp.swift */; };
-		A32928EC2C790865007B1869 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32928EB2C790865007B1869 /* ContentView.swift */; };
-		A32928EE2C790866007B1869 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A32928ED2C790866007B1869 /* Assets.xcassets */; };
-		A32928F12C790866007B1869 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A32928F02C790866007B1869 /* Preview Assets.xcassets */; };
-		A360D7452C791E67001552F6 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A360D7432C791E67001552F6 /* DateValue.swift */; };
-		A39847842C81CB06006B72FF /* AssignmentRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A398476F2C81CB06006B72FF /* AssignmentRegisterView.swift */; };
-		A39847852C81CB06006B72FF /* AssignmentsHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847702C81CB06006B72FF /* AssignmentsHolderView.swift */; };
-		A39847862C81CB06006B72FF /* AssignmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847712C81CB06006B72FF /* AssignmentsView.swift */; };
-		A39847872C81CB06006B72FF /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847722C81CB06006B72FF /* DatePickerView.swift */; };
-		A39847882C81CB06006B72FF /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847732C81CB06006B72FF /* ReminderView.swift */; };
-		A39847892C81CB06006B72FF /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847752C81CB06006B72FF /* CalendarView.swift */; };
-		A398478A2C81CB06006B72FF /* database.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847762C81CB06006B72FF /* database.swift */; };
-		A398478B2C81CB06006B72FF /* DateSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847772C81CB06006B72FF /* DateSample.swift */; };
-		A398478C2C81CB06006B72FF /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847782C81CB06006B72FF /* DetailView.swift */; };
-		A398478D2C81CB06006B72FF /* EventsCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847792C81CB06006B72FF /* EventsCalendarView.swift */; };
-		A398478E2C81CB06006B72FF /* plactice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A398477A2C81CB06006B72FF /* plactice.swift */; };
-		A39847912C81CB06006B72FF /* CoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A398477E2C81CB06006B72FF /* CoursesView.swift */; };
-		A39847922C81CB06006B72FF /* DatePickerPopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A398477F2C81CB06006B72FF /* DatePickerPopOver.swift */; };
-		A39847932C81CB06006B72FF /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847802C81CB06006B72FF /* DBManager.swift */; };
-		A39847942C81CB06006B72FF /* GradesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847812C81CB06006B72FF /* GradesView.swift */; };
-		A39847952C81CB06006B72FF /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847822C81CB06006B72FF /* Home.swift */; };
+		A398193E2C82825300176CDD /* ReminderDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A398193D2C82825300176CDD /* ReminderDatabaseManager.swift */; };
+		A398193F2C83C45900176CDD /* AssignmentDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A398193C2C82823B00176CDD /* AssignmentDatabaseManager.swift */; };
+		A39819412C83C6CA00176CDD /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39819402C83C6CA00176CDD /* Assignment.swift */; };
+		A39847CA2C81CF4F006B72FF /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847B82C81CF4F006B72FF /* DateValue.swift */; };
+		A39847CB2C81CF4F006B72FF /* AssignmentRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847BA2C81CF4F006B72FF /* AssignmentRegisterView.swift */; };
+		A39847CC2C81CF4F006B72FF /* AssignmentsHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847BB2C81CF4F006B72FF /* AssignmentsHolderView.swift */; };
+		A39847CD2C81CF4F006B72FF /* AssignmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847BC2C81CF4F006B72FF /* AssignmentsView.swift */; };
+		A39847CE2C81CF4F006B72FF /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847BD2C81CF4F006B72FF /* DatePickerView.swift */; };
+		A39847CF2C81CF4F006B72FF /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847BE2C81CF4F006B72FF /* ReminderView.swift */; };
+		A39847D02C81CF4F006B72FF /* CoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847C02C81CF4F006B72FF /* CoursesView.swift */; };
+		A39847D12C81CF4F006B72FF /* DatePickerPopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847C12C81CF4F006B72FF /* DatePickerPopOver.swift */; };
+		A39847D32C81CF4F006B72FF /* GradesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847C32C81CF4F006B72FF /* GradesView.swift */; };
+		A39847D42C81CF4F006B72FF /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847C42C81CF4F006B72FF /* Home.swift */; };
+		A39847D52C81CF4F006B72FF /* academic_reminderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847C62C81CF4F006B72FF /* academic_reminderApp.swift */; };
+		A39847D62C81CF4F006B72FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A39847C72C81CF4F006B72FF /* Assets.xcassets */; };
+		A39847D72C81CF4F006B72FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847C82C81CF4F006B72FF /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A32928E62C790865007B1869 /* academic-reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "academic-reminder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A32928E92C790865007B1869 /* academic_reminderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = academic_reminderApp.swift; sourceTree = "<group>"; };
-		A32928EB2C790865007B1869 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		A32928ED2C790866007B1869 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A32928F02C790866007B1869 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		A360D7432C791E67001552F6 /* DateValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
-		A398476F2C81CB06006B72FF /* AssignmentRegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentRegisterView.swift; sourceTree = "<group>"; };
-		A39847702C81CB06006B72FF /* AssignmentsHolderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentsHolderView.swift; sourceTree = "<group>"; };
-		A39847712C81CB06006B72FF /* AssignmentsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentsView.swift; sourceTree = "<group>"; };
-		A39847722C81CB06006B72FF /* DatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
-		A39847732C81CB06006B72FF /* ReminderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
-		A39847752C81CB06006B72FF /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
-		A39847762C81CB06006B72FF /* database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = database.swift; sourceTree = "<group>"; };
-		A39847772C81CB06006B72FF /* DateSample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSample.swift; sourceTree = "<group>"; };
-		A39847782C81CB06006B72FF /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		A39847792C81CB06006B72FF /* EventsCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsCalendarView.swift; sourceTree = "<group>"; };
-		A398477A2C81CB06006B72FF /* plactice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = plactice.swift; sourceTree = "<group>"; };
-		A398477E2C81CB06006B72FF /* CoursesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesView.swift; sourceTree = "<group>"; };
-		A398477F2C81CB06006B72FF /* DatePickerPopOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerPopOver.swift; sourceTree = "<group>"; };
-		A39847802C81CB06006B72FF /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
-		A39847812C81CB06006B72FF /* GradesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradesView.swift; sourceTree = "<group>"; };
-		A39847822C81CB06006B72FF /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		A398193C2C82823B00176CDD /* AssignmentDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentDatabaseManager.swift; sourceTree = "<group>"; };
+		A398193D2C82825300176CDD /* ReminderDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDatabaseManager.swift; sourceTree = "<group>"; };
+		A39819402C83C6CA00176CDD /* Assignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
+		A39847B82C81CF4F006B72FF /* DateValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
+		A39847BA2C81CF4F006B72FF /* AssignmentRegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentRegisterView.swift; sourceTree = "<group>"; };
+		A39847BB2C81CF4F006B72FF /* AssignmentsHolderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentsHolderView.swift; sourceTree = "<group>"; };
+		A39847BC2C81CF4F006B72FF /* AssignmentsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentsView.swift; sourceTree = "<group>"; };
+		A39847BD2C81CF4F006B72FF /* DatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		A39847BE2C81CF4F006B72FF /* ReminderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
+		A39847C02C81CF4F006B72FF /* CoursesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesView.swift; sourceTree = "<group>"; };
+		A39847C12C81CF4F006B72FF /* DatePickerPopOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerPopOver.swift; sourceTree = "<group>"; };
+		A39847C32C81CF4F006B72FF /* GradesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradesView.swift; sourceTree = "<group>"; };
+		A39847C42C81CF4F006B72FF /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		A39847C62C81CF4F006B72FF /* academic_reminderApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = academic_reminderApp.swift; sourceTree = "<group>"; };
+		A39847C72C81CF4F006B72FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A39847C82C81CF4F006B72FF /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +59,7 @@
 		A32928DD2C790865007B1869 = {
 			isa = PBXGroup;
 			children = (
-				A32928E82C790865007B1869 /* academic-reminder */,
+				A39847C92C81CF4F006B72FF /* academic-reminder */,
 				A32928E72C790865007B1869 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -82,72 +72,59 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A32928E82C790865007B1869 /* academic-reminder */ = {
+		A398193B2C82822600176CDD /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				A39847832C81CB06006B72FF /* View copy */,
-				A360D7442C791E67001552F6 /* Model */,
-				A32928E92C790865007B1869 /* academic_reminderApp.swift */,
-				A32928EB2C790865007B1869 /* ContentView.swift */,
-				A32928ED2C790866007B1869 /* Assets.xcassets */,
-				A32928EF2C790866007B1869 /* Preview Content */,
+				A398193C2C82823B00176CDD /* AssignmentDatabaseManager.swift */,
+				A398193D2C82825300176CDD /* ReminderDatabaseManager.swift */,
 			);
-			path = "academic-reminder";
+			path = Database;
 			sourceTree = "<group>";
 		};
-		A32928EF2C790866007B1869 /* Preview Content */ = {
+		A39847B92C81CF4F006B72FF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A32928F02C790866007B1869 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		A360D7442C791E67001552F6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				A360D7432C791E67001552F6 /* DateValue.swift */,
+				A39847B82C81CF4F006B72FF /* DateValue.swift */,
+				A39819402C83C6CA00176CDD /* Assignment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		A39847742C81CB06006B72FF /* AssignmentView */ = {
+		A39847BF2C81CF4F006B72FF /* AssignmentView */ = {
 			isa = PBXGroup;
 			children = (
-				A398476F2C81CB06006B72FF /* AssignmentRegisterView.swift */,
-				A39847702C81CB06006B72FF /* AssignmentsHolderView.swift */,
-				A39847712C81CB06006B72FF /* AssignmentsView.swift */,
-				A39847722C81CB06006B72FF /* DatePickerView.swift */,
-				A39847732C81CB06006B72FF /* ReminderView.swift */,
+				A39847BA2C81CF4F006B72FF /* AssignmentRegisterView.swift */,
+				A39847BB2C81CF4F006B72FF /* AssignmentsHolderView.swift */,
+				A39847BC2C81CF4F006B72FF /* AssignmentsView.swift */,
+				A39847BD2C81CF4F006B72FF /* DatePickerView.swift */,
+				A39847BE2C81CF4F006B72FF /* ReminderView.swift */,
 			);
 			path = AssignmentView;
 			sourceTree = "<group>";
 		};
-		A398477B2C81CB06006B72FF /* CalenderViewTab */ = {
+		A39847C52C81CF4F006B72FF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A39847752C81CB06006B72FF /* CalendarView.swift */,
-				A39847762C81CB06006B72FF /* database.swift */,
-				A39847772C81CB06006B72FF /* DateSample.swift */,
-				A39847782C81CB06006B72FF /* DetailView.swift */,
-				A39847792C81CB06006B72FF /* EventsCalendarView.swift */,
-				A398477A2C81CB06006B72FF /* plactice.swift */,
+				A39847BF2C81CF4F006B72FF /* AssignmentView */,
+				A39847C02C81CF4F006B72FF /* CoursesView.swift */,
+				A39847C12C81CF4F006B72FF /* DatePickerPopOver.swift */,
+				A39847C32C81CF4F006B72FF /* GradesView.swift */,
+				A39847C42C81CF4F006B72FF /* Home.swift */,
 			);
-			path = CalenderViewTab;
+			path = View;
 			sourceTree = "<group>";
 		};
-		A39847832C81CB06006B72FF /* View copy */ = {
+		A39847C92C81CF4F006B72FF /* academic-reminder */ = {
 			isa = PBXGroup;
 			children = (
-				A39847742C81CB06006B72FF /* AssignmentView */,
-				A398477B2C81CB06006B72FF /* CalenderViewTab */,
-				A398477E2C81CB06006B72FF /* CoursesView.swift */,
-				A398477F2C81CB06006B72FF /* DatePickerPopOver.swift */,
-				A39847802C81CB06006B72FF /* DBManager.swift */,
-				A39847812C81CB06006B72FF /* GradesView.swift */,
-				A39847822C81CB06006B72FF /* Home.swift */,
+				A398193B2C82822600176CDD /* Database */,
+				A39847B92C81CF4F006B72FF /* Model */,
+				A39847C52C81CF4F006B72FF /* View */,
+				A39847C62C81CF4F006B72FF /* academic_reminderApp.swift */,
+				A39847C72C81CF4F006B72FF /* Assets.xcassets */,
+				A39847C82C81CF4F006B72FF /* ContentView.swift */,
 			);
-			path = "View copy";
+			path = "academic-reminder";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,8 +185,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A32928F12C790866007B1869 /* Preview Assets.xcassets in Resources */,
-				A32928EE2C790866007B1869 /* Assets.xcassets in Resources */,
+				A39847D62C81CF4F006B72FF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,25 +196,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A39847842C81CB06006B72FF /* AssignmentRegisterView.swift in Sources */,
-				A398478C2C81CB06006B72FF /* DetailView.swift in Sources */,
-				A39847952C81CB06006B72FF /* Home.swift in Sources */,
-				A39847862C81CB06006B72FF /* AssignmentsView.swift in Sources */,
-				A398478B2C81CB06006B72FF /* DateSample.swift in Sources */,
-				A39847922C81CB06006B72FF /* DatePickerPopOver.swift in Sources */,
-				A398478E2C81CB06006B72FF /* plactice.swift in Sources */,
-				A39847852C81CB06006B72FF /* AssignmentsHolderView.swift in Sources */,
-				A360D7452C791E67001552F6 /* DateValue.swift in Sources */,
-				A39847872C81CB06006B72FF /* DatePickerView.swift in Sources */,
-				A39847892C81CB06006B72FF /* CalendarView.swift in Sources */,
-				A32928EC2C790865007B1869 /* ContentView.swift in Sources */,
-				A39847942C81CB06006B72FF /* GradesView.swift in Sources */,
-				A39847912C81CB06006B72FF /* CoursesView.swift in Sources */,
-				A39847932C81CB06006B72FF /* DBManager.swift in Sources */,
-				A398478D2C81CB06006B72FF /* EventsCalendarView.swift in Sources */,
-				A39847882C81CB06006B72FF /* ReminderView.swift in Sources */,
-				A398478A2C81CB06006B72FF /* database.swift in Sources */,
-				A32928EA2C790865007B1869 /* academic_reminderApp.swift in Sources */,
+				A398193F2C83C45900176CDD /* AssignmentDatabaseManager.swift in Sources */,
+				A39847CB2C81CF4F006B72FF /* AssignmentRegisterView.swift in Sources */,
+				A39847D12C81CF4F006B72FF /* DatePickerPopOver.swift in Sources */,
+				A39819412C83C6CA00176CDD /* Assignment.swift in Sources */,
+				A39847CE2C81CF4F006B72FF /* DatePickerView.swift in Sources */,
+				A39847D42C81CF4F006B72FF /* Home.swift in Sources */,
+				A39847CF2C81CF4F006B72FF /* ReminderView.swift in Sources */,
+				A39847D32C81CF4F006B72FF /* GradesView.swift in Sources */,
+				A39847CC2C81CF4F006B72FF /* AssignmentsHolderView.swift in Sources */,
+				A398193E2C82825300176CDD /* ReminderDatabaseManager.swift in Sources */,
+				A39847CA2C81CF4F006B72FF /* DateValue.swift in Sources */,
+				A39847D02C81CF4F006B72FF /* CoursesView.swift in Sources */,
+				A39847D72C81CF4F006B72FF /* ContentView.swift in Sources */,
+				A39847D52C81CF4F006B72FF /* academic_reminderApp.swift in Sources */,
+				A39847CD2C81CF4F006B72FF /* AssignmentsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,7 +343,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"academic-reminder/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = RS6S6TR6L4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -400,7 +372,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"academic-reminder/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = RS6S6TR6L4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

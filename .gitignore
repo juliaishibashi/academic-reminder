@@ -8,3 +8,4 @@
 *.xcodeproj/xcuserdata
 *.xcodeproj/xcshareddata
 .DS_Store
+Preview Content/Preview Assets.xcassets
