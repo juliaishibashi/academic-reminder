@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftData
 
 // Utility to get formatted date
 func getFormattedDate(from date: Date, format: String) -> String {
@@ -21,6 +22,8 @@ func calculatePadding(for firstWeekday: Int, calendar: Calendar) -> Int {
 struct DatePickerView: View {
     @Binding var currentDate: Date
     @State private var currentMonth: Int = 0
+    var assignmentDates: [Date]
+//    @Query private var assignments: [Assignment]
     
     var body: some View {
         ZStack {
@@ -41,7 +44,7 @@ struct DatePickerView: View {
                 
                 LazyVGrid(columns: columns, spacing: 15) {
                     ForEach(extractDate(), id: \.id) { value in
-                        DateCardView(value: value, selectedDate: $currentDate)
+                        DateCardView(value: value, selectedDate: $currentDate, assignmentDates: assignmentDates)
                             .onTapGesture {
                                 if value.day != 0 {
                                     currentDate = value.date
@@ -139,6 +142,7 @@ struct DayOfWeekRow: View {
 struct DateCardView: View {
     let value: DateValue
     @Binding var selectedDate: Date
+    var assignmentDates: [Date]
     
     var body: some View {
         if value.day != 0 {
@@ -146,7 +150,8 @@ struct DateCardView: View {
                 .font(.title3.bold())
                 .frame(maxWidth: .infinity, minHeight: 40)
                 .background(
-                    value.date == selectedDate ? Color.white.opacity(0.3) : Color.clear
+                    Calendar.current.isDate(value.date, equalTo: Date(), toGranularity: .day) ? Color.orange.opacity(0.5)
+                    : Color.clear
                 )
                 .clipShape(Circle())
                 .overlay(
@@ -156,6 +161,13 @@ struct DateCardView: View {
                             lineWidth: 2
                         )
                 )
+                .overlay(
+                    Rectangle()
+                        .frame(width: 18, height: 2)
+                        .foregroundColor(assignmentDates.contains(where: { Calendar.current.isDate($0, inSameDayAs: value.date) }) ? .gray : .clear)
+                        .padding(.top, 25)
+                )
+
                 .onTapGesture {
                     selectedDate = value.date
                     print("Date selected: \(formatDate(selectedDate))")
@@ -173,18 +185,21 @@ struct DateCardView: View {
     }
 }
 
-
 #Preview {
     ContentView()
 }
 struct DatePickerView_Previews: PreviewProvider {
     static var previews: some View {
-        // Default Preview
-        DatePickerView(currentDate: .constant(Date()))
-            .previewDisplayName("Default Preview")
-        
-        // Custom Date Preview (e.g., a specific date or month)
-        DatePickerView(currentDate: .constant(Calendar.current.date(from: DateComponents(year: 2024, month: 8, day: 15))!))
-            .previewDisplayName("Custom Date Preview")
-    }
+        let assignmentDates: [Date] = [
+            Calendar.current.date(from: DateComponents(year: 2024, month: 11, day: 5))!,
+            Calendar.current.date(from: DateComponents(year: 2024, month: 11, day: 12))!
+        ]
+        DatePickerView(currentDate: .constant(Date()), assignmentDates: assignmentDates)
+                   .previewDisplayName("Default Preview")
+               
+       // Custom Date Preview (e.g., a specific date or month)
+       DatePickerView(currentDate: .constant(Calendar.current.date(from: DateComponents(year: 2024, month: 8, day: 15))!),
+                      assignmentDates: assignmentDates)
+           .previewDisplayName("Custom Date Preview")
+   }
 }

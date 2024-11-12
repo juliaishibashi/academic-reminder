@@ -1,13 +1,11 @@
-//
-//  AssignmentRegisterView.swift
-//  academic-reminder
-//
-//  Created by Julia on 2024-08-29.
-//
-
 import SwiftUI
+import SwiftData
 
 struct AssignmentRegisterView: View {
+    
+    @Environment(\.modelContext) private var context
+    @Query private var assignment_quiery: [Assignment]
+    
     @Binding var showAddAssignmentSheet: Bool
     
     @State private var newAssignmentName: String = ""
@@ -18,7 +16,7 @@ struct AssignmentRegisterView: View {
     //error handring for weight
     @State private var weightError: String?
     
-    //initialized due time
+    //initialized due time as 23:59
     @State private var date: Date = {
         let calendar = Calendar.current
         var components = calendar.dateComponents([.year, .month, .day], from: Date())
@@ -31,12 +29,10 @@ struct AssignmentRegisterView: View {
     
     @State private var showAddReminderSheet: Bool = false
     @State private var reminderTimes: [String] = []
-    
-    private var dbManager = AssignmentDatabaseManager()
-    
+        
     init(showAddAssignmentSheet: Binding<Bool>) {
-            self._showAddAssignmentSheet = showAddAssignmentSheet
-        }
+        self._showAddAssignmentSheet = showAddAssignmentSheet
+    }
     
     var body: some View {
         VStack{
@@ -96,7 +92,7 @@ struct AssignmentRegisterView: View {
                     }
                 }
                 .padding()
-            }
+            } //h
             .onChange(of: selectedType) { oldType, newType in
                 print("COURSE TYPE: \(selectedType)")
             }//onChange
@@ -138,7 +134,6 @@ struct AssignmentRegisterView: View {
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateStyle = .medium
                     dateFormatter.timeStyle = .short
-//                    dateFormatter.timeZone = TimeZone.current
                     selectedDate = dateFormatter.string(from: newDate)
                     print("SELECTED DATE: \(selectedDate)")
                 } //onChange
@@ -161,21 +156,39 @@ struct AssignmentRegisterView: View {
             ForEach(reminderTimes, id: \.self) { time in Text(time)}
             
             Button(action: {
-                dbManager.saveAssignment(
-                                    title: newAssignmentName,
-                                    courseName: newCourseName,
-                                    type: selectedType,
-                                    weight: newWeight,
-                                    date: date
-                                )
-                                print("SAVED TO DB: \(newAssignmentName), \(newCourseName), \(selectedType), \(newWeight), \(date)")
-                            }) {
+                //create and save the assignmnet to the context
+                let newAssignemt = Assignment(
+                    title: newAssignmentName,
+                    courseName: newCourseName,
+                    type: selectedType,
+                    weight: newWeight,
+                    date: selectedDate,
+                    status: ""
+                )
+                
+                context.insert(newAssignemt)
+                
+                for assignment in assignment_quiery {
+                    print("DEBUG - Assignment ID: \(assignment.id), Title: \(assignment.title), Course: \(assignment.courseName), Type: \(assignment.type), Weight: \(assignment.weight), Due Date: \(assignment.date)")
+                }
+                showAddAssignmentSheet = false
+
+                // Clear input fields
+//                newAssignmentName = ""
+//                newCourseName = ""
+//                selectedType = ""
+//                newWeight = ""
+//                date = Date()
+            }) {
                 Text("Save")
                     .padding()
                     .background(Color.blue)
                     .foregroundColor(.white)
                     .cornerRadius(8)
-            }// save botton
+            }
+//            ForEach(assignment_quiery, id: \.id) { assignment in
+//                Text("Assignment: \(assignment.title), Course: \(assignment.courseName)")
+//            }
         }// Whole vstack
         .foregroundColor(.black)
         .padding(.leading, 15)
@@ -186,5 +199,6 @@ struct AssignmentRegisterView: View {
 struct AssignmentRegisterView_Previews: PreviewProvider {
     static var previews: some View {
         AssignmentRegisterView(showAddAssignmentSheet: .constant(false))
+            .modelContainer(for: Assignment.self)
     }
 }

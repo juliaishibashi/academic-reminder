@@ -1,23 +1,22 @@
-//
 //  Assignment.swift
 //  academic-reminder
 //
-//  Created by Julia on 2024-08-31.
-//
 
-import Combine
+import Foundation
+import SwiftData
 
-class Assignment: ObservableObject, Identifiable {
-    var id: Int
-    @Published var title: String
-    @Published var courseName: String
-    @Published var type: String
-    @Published var weight: String
-    @Published var date: String
-    @Published var status: String
+@Model
+final class Assignment{
+    var id: UUID
+    var title: String
+    var courseName: String
+    var type: String
+    var weight: String
+    var date: String
+    var status: String
 
-    init(id: Int, title: String, courseName: String, type: String, weight: String, date: String, status: String) {
-        self.id = id
+    init(title: String, courseName: String, type: String, weight: String, date: String, status: String) {
+        self.id = UUID()
         self.title = title
         self.courseName = courseName
         self.type = type
