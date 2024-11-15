@@ -185,7 +185,7 @@ struct AssignmentRegisterView: View {
                     print("REMINDER - Saving reminder with value:  \(reminder.id), \(reminder.remindValue), option: \(reminder.selectedOption)")
                 }
                 
-                print("ASSIFNMENT - Saving new assignment: \(newAssignemt.id), Title: \(newAssignemt.title), Course: \(newAssignemt.courseName), Type: \(newAssignemt.type), Weight: \(newAssignemt.weight), Due Date: \(newAssignemt.date)")
+                print("ASSIGNMENT - Saving new assignment: \(newAssignemt.id), Title: \(newAssignemt.title), Course: \(newAssignemt.courseName), Type: \(newAssignemt.type), Weight: \(newAssignemt.weight), Due Date: \(newAssignemt.date)")
                 
 //                for assignment in assignment_quiery {
 //                    print("DEBUG - Assignment ID: \(assignment.id), Title: \(assignment.title), Course: \(assignment.courseName), Type: \(assignment.type), Weight: \(assignment.weight), Due Date: \(assignment.date), Reminder: \(assignment.remindValue), \(assignment.selectedOption)")

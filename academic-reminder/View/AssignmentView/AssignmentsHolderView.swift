@@ -84,6 +84,35 @@ struct AssignmentsHolderView: View {
         try? context.save()
         let displayName = assignment.courseName.isEmpty ? "\(assignment.id)" : assignment.courseName
         print("Deleted: \(displayName)")
+        printRemainingData()
+    }
+    
+    private func printRemainingData() {
+        // Create a fetch descriptor to fetch all assignments
+        let assignmentDescriptor = FetchDescriptor<Assignment>()
+        
+        // Fetch all assignments using the descriptor
+        let allAssignments: [Assignment] = try! context.fetch(assignmentDescriptor)
+        
+        // Fetch all reminders using a similar fetch descriptor
+        let reminderDescriptor = FetchDescriptor<Reminder>()
+//        let allReminders: [Reminder] = try! context.fetch(reminderDescriptor)
+        
+        // Print remaining assignments
+        print("Remaining Assignments:")
+        for assignment in allAssignments {
+            print("Assignment ID: \(assignment.id), Title: \(assignment.title), Course: \(assignment.courseName), Type: \(assignment.type), Weight: \(assignment.weight), Due Date: \(assignment.date)")
+            
+            // Print related reminders for each assignment
+            for reminder in assignment.children {
+                print("  - Reminder ID: \(reminder.id), Value: \(reminder.remindValue), Option: \(reminder.selectedOption)")
+            }
+        }
+        // Print all reminders
+//        print("Remaining Reminders:")
+//        for reminder in allReminders {
+//            print("Reminder ID: \(reminder.id), Value: \(reminder.remindValue), Option: \(reminder.selectedOption)")
+//        }
     }
 
     private func updateStatus(for assignment: Assignment, to status: AssignmentStatus) {
