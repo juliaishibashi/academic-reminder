@@ -5,6 +5,8 @@ struct AssignmentRegisterView: View {
     
     @Environment(\.modelContext) private var context
     @Query private var assignment_quiery: [Assignment]
+    @Query private var reminder_quiery: [Reminder]
+
     
     @Binding var showAddAssignmentSheet: Bool
     
@@ -28,7 +30,8 @@ struct AssignmentRegisterView: View {
     @State private var selectedDate: String = ""
     
     @State private var showAddReminderSheet: Bool = false
-    @State private var reminderTimes: [String] = []
+    @State private var reminders: [Reminder] = []
+
         
     init(showAddAssignmentSheet: Binding<Bool>) {
         self._showAddAssignmentSheet = showAddAssignmentSheet
@@ -148,13 +151,14 @@ struct AssignmentRegisterView: View {
                     Image(systemName: "plus.circle.fill")
                 }
                 .padding()
-                .sheet(isPresented: $showAddReminderSheet){
-                    ReminderView(showAddReminderSheet: $showAddReminderSheet, reminderTimes: $reminderTimes)
+                .sheet(isPresented: $showAddReminderSheet) {
+                    ReminderView(showAddReminderSheet: $showAddReminderSheet, reminders: $reminders)
                 }
             } //reminder
-            
-            ForEach(reminderTimes, id: \.self) { time in Text(time)}
-            
+            ForEach(reminders, id: \.self) { reminder in
+                Text(" Reminders: \(reminder.remindValue)\(reminder.selectedOption)")
+            }
+
             Button(action: {
                 //create and save the assignmnet to the context
                 let newAssignemt = Assignment(
@@ -168,17 +172,17 @@ struct AssignmentRegisterView: View {
                 
                 context.insert(newAssignemt)
                 
-                for assignment in assignment_quiery {
-                    print("DEBUG - Assignment ID: \(assignment.id), Title: \(assignment.title), Course: \(assignment.courseName), Type: \(assignment.type), Weight: \(assignment.weight), Due Date: \(assignment.date)")
+                for reminder in reminders {
+                    context.insert(reminder)
+                    print("REMINDER - Saving reminder with value:  \(reminder.id), \(reminder.remindValue), option: \(reminder.selectedOption)")
                 }
+                
+                print("ASSIFNMENT - Saving new assignment: \(newAssignemt.id), Title: \(newAssignemt.title), Course: \(newAssignemt.courseName), Type: \(newAssignemt.type), Weight: \(newAssignemt.weight), Due Date: \(newAssignemt.date)")
+                
+//                for assignment in assignment_quiery {
+//                    print("DEBUG - Assignment ID: \(assignment.id), Title: \(assignment.title), Course: \(assignment.courseName), Type: \(assignment.type), Weight: \(assignment.weight), Due Date: \(assignment.date), Reminder: \(assignment.remindValue), \(assignment.selectedOption)")
+//                }
                 showAddAssignmentSheet = false
-
-                // Clear input fields
-//                newAssignmentName = ""
-//                newCourseName = ""
-//                selectedType = ""
-//                newWeight = ""
-//                date = Date()
             }) {
                 Text("Save")
                     .padding()
@@ -187,7 +191,7 @@ struct AssignmentRegisterView: View {
                     .cornerRadius(8)
             }
 //            ForEach(assignment_quiery, id: \.id) { assignment in
-//                Text("Assignment: \(assignment.title), Course: \(assignment.courseName)")
+//                print("Assignment: \(assignment.title), Course: \(assignment.courseName)")
 //            }
         }// Whole vstack
         .foregroundColor(.black)

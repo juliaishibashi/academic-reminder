@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A398193E2C82825300176CDD /* ReminderDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A398193D2C82825300176CDD /* ReminderDatabaseManager.swift */; };
-		A398193F2C83C45900176CDD /* AssignmentDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A398193C2C82823B00176CDD /* AssignmentDatabaseManager.swift */; };
 		A39819412C83C6CA00176CDD /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39819402C83C6CA00176CDD /* Assignment.swift */; };
 		A39847CA2C81CF4F006B72FF /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847B82C81CF4F006B72FF /* DateValue.swift */; };
 		A39847CB2C81CF4F006B72FF /* AssignmentRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847BA2C81CF4F006B72FF /* AssignmentRegisterView.swift */; };
@@ -23,12 +21,11 @@
 		A39847D52C81CF4F006B72FF /* academic_reminderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847C62C81CF4F006B72FF /* academic_reminderApp.swift */; };
 		A39847D62C81CF4F006B72FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A39847C72C81CF4F006B72FF /* Assets.xcassets */; };
 		A39847D72C81CF4F006B72FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847C82C81CF4F006B72FF /* ContentView.swift */; };
+		A3B7FE462CE351F6003010EF /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B7FE452CE351E8003010EF /* Reminder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A32928E62C790865007B1869 /* academic-reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "academic-reminder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A398193C2C82823B00176CDD /* AssignmentDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentDatabaseManager.swift; sourceTree = "<group>"; };
-		A398193D2C82825300176CDD /* ReminderDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDatabaseManager.swift; sourceTree = "<group>"; };
 		A39819402C83C6CA00176CDD /* Assignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
 		A39847B82C81CF4F006B72FF /* DateValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
 		A39847BA2C81CF4F006B72FF /* AssignmentRegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentRegisterView.swift; sourceTree = "<group>"; };
@@ -43,6 +40,7 @@
 		A39847C62C81CF4F006B72FF /* academic_reminderApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = academic_reminderApp.swift; sourceTree = "<group>"; };
 		A39847C72C81CF4F006B72FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A39847C82C81CF4F006B72FF /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A3B7FE452CE351E8003010EF /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,18 +70,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A398193B2C82822600176CDD /* Database */ = {
-			isa = PBXGroup;
-			children = (
-				A398193C2C82823B00176CDD /* AssignmentDatabaseManager.swift */,
-				A398193D2C82825300176CDD /* ReminderDatabaseManager.swift */,
-			);
-			path = Database;
-			sourceTree = "<group>";
-		};
 		A39847B92C81CF4F006B72FF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A3B7FE452CE351E8003010EF /* Reminder.swift */,
 				A39847B82C81CF4F006B72FF /* DateValue.swift */,
 				A39819402C83C6CA00176CDD /* Assignment.swift */,
 			);
@@ -117,7 +107,6 @@
 		A39847C92C81CF4F006B72FF /* academic-reminder */ = {
 			isa = PBXGroup;
 			children = (
-				A398193B2C82822600176CDD /* Database */,
 				A39847B92C81CF4F006B72FF /* Model */,
 				A39847C52C81CF4F006B72FF /* View */,
 				A39847C62C81CF4F006B72FF /* academic_reminderApp.swift */,
@@ -196,7 +185,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A398193F2C83C45900176CDD /* AssignmentDatabaseManager.swift in Sources */,
 				A39847CB2C81CF4F006B72FF /* AssignmentRegisterView.swift in Sources */,
 				A39847D12C81CF4F006B72FF /* DatePickerPopOver.swift in Sources */,
 				A39819412C83C6CA00176CDD /* Assignment.swift in Sources */,
@@ -205,12 +193,12 @@
 				A39847CF2C81CF4F006B72FF /* ReminderView.swift in Sources */,
 				A39847D32C81CF4F006B72FF /* GradesView.swift in Sources */,
 				A39847CC2C81CF4F006B72FF /* AssignmentsHolderView.swift in Sources */,
-				A398193E2C82825300176CDD /* ReminderDatabaseManager.swift in Sources */,
 				A39847CA2C81CF4F006B72FF /* DateValue.swift in Sources */,
 				A39847D02C81CF4F006B72FF /* CoursesView.swift in Sources */,
 				A39847D72C81CF4F006B72FF /* ContentView.swift in Sources */,
 				A39847D52C81CF4F006B72FF /* academic_reminderApp.swift in Sources */,
 				A39847CD2C81CF4F006B72FF /* AssignmentsView.swift in Sources */,
+				A3B7FE462CE351F6003010EF /* Reminder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

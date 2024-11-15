@@ -14,6 +14,8 @@ final class Assignment{
     var weight: String
     var date: String
     var status: String
+//    var remindValue: String
+//    var selectedOption: String
 
     init(title: String, courseName: String, type: String, weight: String, date: String, status: String) {
         self.id = UUID()
@@ -25,4 +27,3 @@ final class Assignment{
         self.status = status
     }
 }
-
