@@ -7,12 +7,17 @@
 import Foundation
 import SwiftData
 
+
 @Model
-class Reminder: Hashable{
+final class Reminder: Hashable{
+    
+    @Attribute(.unique)
     var id: UUID
     var remindValue: String
     var selectedOption: String
-
+    
+    var parent: Assignment?
+    
     init(remindValue: String, selectedOption: String) {
         self.id = UUID()
         self.remindValue = remindValue

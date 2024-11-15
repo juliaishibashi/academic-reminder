@@ -14,10 +14,11 @@ final class Assignment{
     var weight: String
     var date: String
     var status: String
-//    var remindValue: String
-//    var selectedOption: String
 
-    init(title: String, courseName: String, type: String, weight: String, date: String, status: String) {
+    @Relationship(inverse: \Reminder.parent)
+    var children: [Reminder] = []
+
+    init(title: String, courseName: String, type: String, weight: String, date: String, status: String, children: [Reminder] = []) {
         self.id = UUID()
         self.title = title
         self.courseName = courseName
@@ -25,5 +26,6 @@ final class Assignment{
         self.weight = weight
         self.date = date
         self.status = status
+        self.children = children
     }
 }

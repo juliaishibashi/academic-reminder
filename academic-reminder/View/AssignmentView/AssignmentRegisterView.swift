@@ -170,6 +170,14 @@ struct AssignmentRegisterView: View {
                     status: ""
                 )
                 
+                for reminder in reminders {
+                    let newReminder = Reminder(remindValue: reminder.remindValue, selectedOption: reminder.selectedOption)
+                    newReminder.parent = newAssignemt
+                    newAssignemt.children.append(newReminder)
+                    context.insert(newReminder)
+                    print("REMINDER RELARATION - Saving reminder with value: \(newReminder.id), \(newReminder.remindValue), option: \(newReminder.selectedOption), assigned to Assignment ID: \(newAssignemt.id)")
+                }
+                                    
                 context.insert(newAssignemt)
                 
                 for reminder in reminders {
