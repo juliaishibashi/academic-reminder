@@ -9,15 +9,31 @@ enum AssignmentStatus: String {
 
 struct AssignmentsHolderView: View {
     @Environment(\.modelContext) private var context
+    @Query private var assignment_quiery: [Assignment]
+    @Query private var reminder_quiery: [Reminder]
+    
     var assignment: Assignment
     var onStatusChanged: (() -> Void)?
     
     @State private var currentStatus: String
     
+    
     init(assignment: Assignment, onStatusChanged: (() -> Void)? = nil) {
         self.assignment = assignment
         self.onStatusChanged = onStatusChanged
         _currentStatus = State(initialValue: assignment.status.isEmpty ? "Status" : assignment.status)
+    }
+    
+    //for Assignment to AssignmentStatus
+    private func updateStatus(for assignment: Assignment, to status: AssignmentStatus) {
+        //        let oldStatus = assignment.status
+        
+        assignment.status = status.rawValue
+        currentStatus = status.rawValue
+        
+        context.insert(assignment)
+        saveAssignment()
+        onStatusChanged?()
     }
     
     var body: some View {
@@ -31,10 +47,10 @@ struct AssignmentsHolderView: View {
                     Text(assignment.title)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .fontWeight(.semibold)
-
+                    
                     Menu {
                         Button(action: {
-                            updateStatus(for: assignment, to: .notStarted)
+                            updateStatus(for: assignment, to: AssignmentStatus.notStarted)
                         }) {
                             Text("Not started")
                         }
@@ -53,6 +69,7 @@ struct AssignmentsHolderView: View {
                             RoundedRectangle(cornerRadius: 5)
                                 .stroke(Color.gray, lineWidth: 1)
                                 .frame(height: 32)
+                            //status options
                             HStack {
                                 Text(currentStatus)
                                     .padding(.leading, 10)
@@ -64,7 +81,6 @@ struct AssignmentsHolderView: View {
                     }
                     .padding(.horizontal)
                 }
-                
                 Text(assignment.type + " (" + assignment.weight + " %) - " + assignment.courseName)
                 Text("Due: \(assignment.date)")
             }
@@ -80,51 +96,46 @@ struct AssignmentsHolderView: View {
     }
     
     private func deleteAssignment(_ assignment: Assignment) {
+        for reminder in assignment.children {
+            reminder.parent = nil
+            context.delete(reminder)
+        }
         context.delete(assignment)
-        try? context.save()
-        let displayName = assignment.courseName.isEmpty ? "\(assignment.id)" : assignment.courseName
-        print("Deleted: \(displayName)")
+        saveAssignment()
+    }
+    
+//    private func deleteAllreminders(_ assignment: Assignment) {
+//        for reminder in reminder_quiery {
+//            context.delete(reminder)
+//        }
+//        context.delete(assignment)
+//        saveAssignment()
+//    }
+    
+    private func saveAssignment(){
+        do {
+            try context.save()
+        } catch {
+            print("Error saving context: \(error)")
+        }
         printRemainingData()
     }
     
     private func printRemainingData() {
-        // Create a fetch descriptor to fetch all assignments
-        let assignmentDescriptor = FetchDescriptor<Assignment>()
+        print("Total # of assignments: \(assignment_quiery.count)")
+        print("Total # of reminder_quiery: \(reminder_quiery.count)")
         
-        // Fetch all assignments using the descriptor
-        let allAssignments: [Assignment] = try! context.fetch(assignmentDescriptor)
+//        for reminder in reminder_quiery {
+//            print("Reminder ID: \(reminder.id), Value: \(reminder.remindValue), Option: \(reminder.selectedOption)")
+//        }
         
-        // Fetch all reminders using a similar fetch descriptor
-        let reminderDescriptor = FetchDescriptor<Reminder>()
-//        let allReminders: [Reminder] = try! context.fetch(reminderDescriptor)
-        
-        // Print remaining assignments
-        print("Remaining Assignments:")
-        for assignment in allAssignments {
+        for assignment in assignment_quiery {
             print("Assignment ID: \(assignment.id), Title: \(assignment.title), Course: \(assignment.courseName), Type: \(assignment.type), Weight: \(assignment.weight), Due Date: \(assignment.date)")
             
-            // Print related reminders for each assignment
             for reminder in assignment.children {
                 print("  - Reminder ID: \(reminder.id), Value: \(reminder.remindValue), Option: \(reminder.selectedOption)")
             }
         }
-        // Print all reminders
-//        print("Remaining Reminders:")
-//        for reminder in allReminders {
-//            print("Reminder ID: \(reminder.id), Value: \(reminder.remindValue), Option: \(reminder.selectedOption)")
-//        }
-    }
-
-    private func updateStatus(for assignment: Assignment, to status: AssignmentStatus) {
-        let oldStatus = assignment.status
-        assignment.status = status.rawValue
-        currentStatus = status.rawValue // @State
-        context.insert(assignment)
-        try? context.save()
-
-        print("\(assignment.courseName): Previous Status: \(oldStatus), New Status: \(assignment.status)")
-        
-        onStatusChanged?()
     }
 }
 
