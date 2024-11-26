@@ -3,7 +3,8 @@ import SwiftData
 
 struct AssignmentsView: View {
     @Environment(\.modelContext) private var context
-    @Query private var assignments: [Assignment]
+    @Query private var assignment_quiery: [Assignment]
+    @Query private var reminder_quiery: [Reminder]
     
     @State private var showAddAssignmentSheet = false
     
@@ -11,6 +12,10 @@ struct AssignmentsView: View {
         VStack {
             Text("Assignments")
                 .font(.title.bold())
+            
+            Text("Loaded Assignments: \(assignment_quiery.count)")
+            Text("Loaded Reminders: \(reminder_quiery.count)")
+                .padding()
             
             Button(action: {
                 showAddAssignmentSheet = true
@@ -20,12 +25,14 @@ struct AssignmentsView: View {
                     .font(.system(size: 24))
                     .padding()
             }
+            .accessibilityIdentifier("addAssignmentButton")
+            
             .sheet(isPresented: $showAddAssignmentSheet) {
                 AssignmentRegisterView(showAddAssignmentSheet: $showAddAssignmentSheet)
             }
             
             List {
-                ForEach(assignments.sorted {
+                ForEach(assignment_quiery.sorted {
                     // "Done" to bottom
                     $0.status == AssignmentStatus.done.rawValue ? false : $1.status == AssignmentStatus.done.rawValue
                 }, id: \.id) { assignment in
