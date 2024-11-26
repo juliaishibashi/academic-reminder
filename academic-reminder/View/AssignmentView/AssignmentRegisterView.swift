@@ -4,10 +4,9 @@ import SwiftData
 struct AssignmentRegisterView: View {
     
     @Environment(\.modelContext) private var context
-    @Query private var assignment_quiery: [Assignment]
-    @Query private var reminder_quiery: [Reminder]
+//    @Query private var assignment_quiery: [Assignment]
+//    @Query private var reminder_quiery: [Reminder]
 
-    
     @Binding var showAddAssignmentSheet: Bool
     
     @State private var newAssignmentName: String = ""
@@ -28,10 +27,9 @@ struct AssignmentRegisterView: View {
     }()
     
     @State private var selectedDate: String = ""
-    
     @State private var showAddReminderSheet: Bool = false
+    
     @State private var reminders: [Reminder] = []
-
         
     init(showAddAssignmentSheet: Binding<Bool>) {
         self._showAddAssignmentSheet = showAddAssignmentSheet
@@ -91,9 +89,10 @@ struct AssignmentRegisterView: View {
                             Spacer()
                             Image(systemName: "arrowtriangle.down.fill")
                                 .padding(.trailing, 10)
-                        }
+                        }.accessibilityIdentifier("arrowtriangleType")
                     }
                 }
+                
                 .padding()
             } //h
             .onChange(of: selectedType) { oldType, newType in
@@ -160,13 +159,14 @@ struct AssignmentRegisterView: View {
             }
 
             Button(action: {
+                let finalDate = date == Date() ? Date() : date
                 //create and save the assignmnet to the context
                 let newAssignemt = Assignment(
                     title: newAssignmentName,
                     courseName: newCourseName,
                     type: selectedType,
                     weight: newWeight,
-                    date: selectedDate,
+                    date: selectedDate.isEmpty ? DateFormatter.localizedString(from: finalDate, dateStyle: .medium, timeStyle: .short) : selectedDate,
                     status: ""
                 )
                 
@@ -174,22 +174,25 @@ struct AssignmentRegisterView: View {
                     let newReminder = Reminder(remindValue: reminder.remindValue, selectedOption: reminder.selectedOption)
                     newReminder.parent = newAssignemt
                     newAssignemt.children.append(newReminder)
+                    
                     context.insert(newReminder)
-                    print("REMINDER RELARATION - Saving reminder with value: \(newReminder.id), \(newReminder.remindValue), option: \(newReminder.selectedOption), assigned to Assignment ID: \(newAssignemt.id)")
+                    context.insert(newAssignemt)
+
+                    
+                    print("REMINDER - Saving reminder with value: \(newReminder.id), \(newReminder.remindValue), option: \(newReminder.selectedOption), assigned to Assignment ID: \(newAssignemt.id)")
+                    
+                    scheduleNotification(for: newAssignemt, with: newReminder)
                 }
-                                    
-                context.insert(newAssignemt)
-                
-                for reminder in reminders {
-                    context.insert(reminder)
-                    print("REMINDER - Saving reminder with value:  \(reminder.id), \(reminder.remindValue), option: \(reminder.selectedOption)")
-                }
-                
+                                
                 print("ASSIGNMENT - Saving new assignment: \(newAssignemt.id), Title: \(newAssignemt.title), Course: \(newAssignemt.courseName), Type: \(newAssignemt.type), Weight: \(newAssignemt.weight), Due Date: \(newAssignemt.date)")
+
+                do {
+                    try context.save()
+                    print("Assignment saved")
+                } catch {
+                    print("Error on AssignmentRegisterView: \(error.localizedDescription)")
+                }
                 
-//                for assignment in assignment_quiery {
-//                    print("DEBUG - Assignment ID: \(assignment.id), Title: \(assignment.title), Course: \(assignment.courseName), Type: \(assignment.type), Weight: \(assignment.weight), Due Date: \(assignment.date), Reminder: \(assignment.remindValue), \(assignment.selectedOption)")
-//                }
                 showAddAssignmentSheet = false
             }) {
                 Text("Save")
@@ -198,13 +201,25 @@ struct AssignmentRegisterView: View {
                     .foregroundColor(.white)
                     .cornerRadius(8)
             }
-//            ForEach(assignment_quiery, id: \.id) { assignment in
-//                print("Assignment: \(assignment.title), Course: \(assignment.courseName)")
-//            }
+            .accessibilityIdentifier("assignmentSave")
         }// Whole vstack
         .foregroundColor(.black)
         .padding(.leading, 15)
         .textFieldStyle(RoundedBorderTextFieldStyle())
+    }
+    
+    private func scheduleNotification(for assignment: Assignment, with reminder: Reminder) {
+        
+        print("Debug: Assignment we got: \(assignment.title)")
+        print("Debug: Reminder val we got: \(reminder.remindValue)")
+        
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            print("Debug: Assignment Title: \(assignment.title)")
+            print("Debug: Reminder Value: \(reminder.remindValue)")
+            appDelegate.scheduleNotification(for: assignment, with: reminder)
+        } else {
+            print("Error: Unable to retrieve AppDelegate.")
+        }
     }
 }
 
