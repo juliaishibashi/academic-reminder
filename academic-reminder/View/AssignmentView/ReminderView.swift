@@ -19,6 +19,8 @@ struct ReminderView: View {
                 }) {
                     Image(systemName: "plus.circle.fill")
                 }
+                .accessibilityIdentifier("addReminderButton")
+
                 Spacer()
             }
             .padding()
@@ -35,12 +37,12 @@ struct ReminderView: View {
                 }
                 showAddReminderSheet = false
             }) {
-                Text("Save 1")
+                Text("Save")
                     .padding()
                     .background(Color.blue)
                     .foregroundColor(.white)
                     .cornerRadius(8)
-            }
+            }.accessibilityIdentifier("reminderSave")
             Text("Reminder Values: \(reminders.map { "\($0.remindValue) \($0.selectedOption)" }.joined(separator: ", "))")
 
             }
@@ -92,6 +94,8 @@ struct ReminderView: View {
                                     Image(systemName: "arrowtriangle.down.fill")
                                         .padding(.trailing, 10)
                                 }
+                                .accessibilityIdentifier("reminderArrowDownButton")
+
                             }
                         }
                         Text(" Before")
