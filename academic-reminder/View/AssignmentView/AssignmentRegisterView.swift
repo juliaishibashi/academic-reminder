@@ -181,7 +181,7 @@ struct AssignmentRegisterView: View {
                     
                     print("REMINDER - Saving reminder with value: \(newReminder.id), \(newReminder.remindValue), option: \(newReminder.selectedOption), assigned to Assignment ID: \(newAssignemt.id)")
                     
-                    scheduleNotification(for: newAssignemt, with: newReminder)
+//                    scheduleNotification(for: newAssignemt, with: newReminder)
                 }
                                 
                 print("ASSIGNMENT - Saving new assignment: \(newAssignemt.id), Title: \(newAssignemt.title), Course: \(newAssignemt.courseName), Type: \(newAssignemt.type), Weight: \(newAssignemt.weight), Due Date: \(newAssignemt.date)")
@@ -207,20 +207,20 @@ struct AssignmentRegisterView: View {
         .padding(.leading, 15)
         .textFieldStyle(RoundedBorderTextFieldStyle())
     }
-    
-    private func scheduleNotification(for assignment: Assignment, with reminder: Reminder) {
-        
-        print("Debug: Assignment we got: \(assignment.title)")
-        print("Debug: Reminder val we got: \(reminder.remindValue)")
-        
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-            print("Debug: Assignment Title: \(assignment.title)")
-            print("Debug: Reminder Value: \(reminder.remindValue)")
-            appDelegate.scheduleNotification(for: assignment, with: reminder)
-        } else {
-            print("Error: Unable to retrieve AppDelegate.")
-        }
-    }
+//    
+//    private func scheduleNotification(for assignment: Assignment, with reminder: Reminder) {
+//        
+//        print("Debug: Assignment we got: \(assignment.title)")
+//        print("Debug: Reminder val we got: \(reminder.remindValue)")
+//        
+//        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+//            print("Debug: Assignment Title: \(assignment.title)")
+//            print("Debug: Reminder Value: \(reminder.remindValue)")
+//            appDelegate.scheduleNotification(for: assignment, with: reminder)
+//        } else {
+//            print("Error: Unable to retrieve AppDelegate.")
+//        }
+//    }
 }
 
 struct AssignmentRegisterView_Previews: PreviewProvider {
