@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,7 +22,18 @@
 		A39847D62C81CF4F006B72FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A39847C72C81CF4F006B72FF /* Assets.xcassets */; };
 		A39847D72C81CF4F006B72FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847C82C81CF4F006B72FF /* ContentView.swift */; };
 		A3B7FE462CE351F6003010EF /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B7FE452CE351E8003010EF /* Reminder.swift */; };
+		A3BF2A7E2CF53645004F3138 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BF2A7D2CF5363D004F3138 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A3BF2A912CF56ED5004F3138 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A32928DE2C790865007B1869 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A32928E52C790865007B1869;
+			remoteInfo = "academic-reminder";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A32928E62C790865007B1869 /* academic-reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "academic-reminder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,10 +52,24 @@
 		A39847C72C81CF4F006B72FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A39847C82C81CF4F006B72FF /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A3B7FE452CE351E8003010EF /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
+		A3BF2A7D2CF5363D004F3138 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A3BF2A842CF54AA0004F3138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3BF2A8B2CF56ED5004F3138 /* academic-reminderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "academic-reminderUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		A3BF2A8C2CF56ED5004F3138 /* academic-reminderUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "academic-reminderUITests"; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A32928E32C790865007B1869 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3BF2A882CF56ED5004F3138 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -58,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				A39847C92C81CF4F006B72FF /* academic-reminder */,
+				A3BF2A8C2CF56ED5004F3138 /* academic-reminderUITests */,
 				A32928E72C790865007B1869 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				A32928E62C790865007B1869 /* academic-reminder.app */,
+				A3BF2A8B2CF56ED5004F3138 /* academic-reminderUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,6 +127,7 @@
 				A39847C12C81CF4F006B72FF /* DatePickerPopOver.swift */,
 				A39847C32C81CF4F006B72FF /* GradesView.swift */,
 				A39847C42C81CF4F006B72FF /* Home.swift */,
+				A39847C82C81CF4F006B72FF /* ContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -107,11 +135,12 @@
 		A39847C92C81CF4F006B72FF /* academic-reminder */ = {
 			isa = PBXGroup;
 			children = (
+				A3BF2A842CF54AA0004F3138 /* Info.plist */,
+				A3BF2A7D2CF5363D004F3138 /* AppDelegate.swift */,
 				A39847B92C81CF4F006B72FF /* Model */,
 				A39847C52C81CF4F006B72FF /* View */,
 				A39847C62C81CF4F006B72FF /* academic_reminderApp.swift */,
 				A39847C72C81CF4F006B72FF /* Assets.xcassets */,
-				A39847C82C81CF4F006B72FF /* ContentView.swift */,
 			);
 			path = "academic-reminder";
 			sourceTree = "<group>";
@@ -136,6 +165,29 @@
 			productReference = A32928E62C790865007B1869 /* academic-reminder.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A3BF2A8A2CF56ED5004F3138 /* academic-reminderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3BF2A932CF56ED5004F3138 /* Build configuration list for PBXNativeTarget "academic-reminderUITests" */;
+			buildPhases = (
+				A3BF2A872CF56ED5004F3138 /* Sources */,
+				A3BF2A882CF56ED5004F3138 /* Frameworks */,
+				A3BF2A892CF56ED5004F3138 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A3BF2A922CF56ED5004F3138 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				A3BF2A8C2CF56ED5004F3138 /* academic-reminderUITests */,
+			);
+			name = "academic-reminderUITests";
+			packageProductDependencies = (
+			);
+			productName = "academic-reminderUITests";
+			productReference = A3BF2A8B2CF56ED5004F3138 /* academic-reminderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -143,11 +195,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1540;
+				LastSwiftUpdateCheck = 1610;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					A32928E52C790865007B1869 = {
 						CreatedOnToolsVersion = 15.4;
+					};
+					A3BF2A8A2CF56ED5004F3138 = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = A32928E52C790865007B1869;
 					};
 				};
 			};
@@ -165,6 +221,7 @@
 			projectRoot = "";
 			targets = (
 				A32928E52C790865007B1869 /* academic-reminder */,
+				A3BF2A8A2CF56ED5004F3138 /* academic-reminderUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -178,6 +235,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A3BF2A892CF56ED5004F3138 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -188,6 +252,7 @@
 				A39847CB2C81CF4F006B72FF /* AssignmentRegisterView.swift in Sources */,
 				A39847D12C81CF4F006B72FF /* DatePickerPopOver.swift in Sources */,
 				A39819412C83C6CA00176CDD /* Assignment.swift in Sources */,
+				A3BF2A7E2CF53645004F3138 /* AppDelegate.swift in Sources */,
 				A39847CE2C81CF4F006B72FF /* DatePickerView.swift in Sources */,
 				A39847D42C81CF4F006B72FF /* Home.swift in Sources */,
 				A39847CF2C81CF4F006B72FF /* ReminderView.swift in Sources */,
@@ -202,7 +267,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A3BF2A872CF56ED5004F3138 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A3BF2A922CF56ED5004F3138 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A32928E52C790865007B1869 /* academic-reminder */;
+			targetProxy = A3BF2A912CF56ED5004F3138 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		A32928F22C790866007B1869 /* Debug */ = {
@@ -335,6 +415,7 @@
 				DEVELOPMENT_TEAM = RS6S6TR6L4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "academic-reminder/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -364,6 +445,7 @@
 				DEVELOPMENT_TEAM = RS6S6TR6L4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "academic-reminder/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -379,6 +461,42 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A3BF2A942CF56ED5004F3138 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RS6S6TR6L4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.julia.academic-reminderUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "academic-reminder";
+			};
+			name = Debug;
+		};
+		A3BF2A952CF56ED5004F3138 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RS6S6TR6L4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.julia.academic-reminderUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "academic-reminder";
 			};
 			name = Release;
 		};
@@ -399,6 +517,15 @@
 			buildConfigurations = (
 				A32928F52C790866007B1869 /* Debug */,
 				A32928F62C790866007B1869 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A3BF2A932CF56ED5004F3138 /* Build configuration list for PBXNativeTarget "academic-reminderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3BF2A942CF56ED5004F3138 /* Debug */,
+				A3BF2A952CF56ED5004F3138 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
