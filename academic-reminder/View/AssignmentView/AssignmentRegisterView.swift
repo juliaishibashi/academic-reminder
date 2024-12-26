@@ -4,8 +4,6 @@ import SwiftData
 struct AssignmentRegisterView: View {
     
     @Environment(\.modelContext) private var context
-//    @Query private var assignment_quiery: [Assignment]
-//    @Query private var reminder_quiery: [Reminder]
 
     @Binding var showAddAssignmentSheet: Bool
     
@@ -13,6 +11,9 @@ struct AssignmentRegisterView: View {
     @State private var newCourseName: String = ""
     @State private var selectedType: String = ""
     @State private var newWeight: String = ""
+    
+    // Add NotificationManager instance
+    private let notificationManager = NotificationManager()
     
     //error handring for weight
     @State private var weightError: String?
@@ -181,7 +182,6 @@ struct AssignmentRegisterView: View {
                     
                     print("REMINDER - Saving reminder with value: \(newReminder.id), \(newReminder.remindValue), option: \(newReminder.selectedOption), assigned to Assignment ID: \(newAssignemt.id)")
                     
-//                    scheduleNotification(for: newAssignemt, with: newReminder)
                 }
                                 
                 print("ASSIGNMENT - Saving new assignment: \(newAssignemt.id), Title: \(newAssignemt.title), Course: \(newAssignemt.courseName), Type: \(newAssignemt.type), Weight: \(newAssignemt.weight), Due Date: \(newAssignemt.date)")
@@ -192,7 +192,9 @@ struct AssignmentRegisterView: View {
                 } catch {
                     print("Error on AssignmentRegisterView: \(error.localizedDescription)")
                 }
-                
+                for reminder in reminders{
+                    notificationManager.scheduleNotification(for: newAssignemt, with: reminder)
+                }
                 showAddAssignmentSheet = false
             }) {
                 Text("Save")

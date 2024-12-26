@@ -10,9 +10,7 @@ import XCTest
 final class academic_reminderUITests: XCTestCase {
 
     override func setUpWithError() throws {
-       
         continueAfterFailure = false
-
     }
 
     func testExample() throws {
@@ -89,7 +87,6 @@ final class academic_reminderUITests: XCTestCase {
         let saveAssignmentButton = app.buttons["assignmentSave"]
         XCTAssertTrue(saveAssignmentButton.exists)
         saveAssignmentButton.tap()
-        
     }
 
     @MainActor

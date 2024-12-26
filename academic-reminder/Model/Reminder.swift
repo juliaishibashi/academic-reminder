@@ -1,12 +1,5 @@
-////
-////  Reminder.swift
-////  academic-reminder
-////
-////  Created by Julia on 2024-11-12.
-////
 import Foundation
 import SwiftData
-
 
 @Model
 final class Reminder: Hashable{
@@ -24,8 +17,3 @@ final class Reminder: Hashable{
         self.selectedOption = selectedOption
     }
 }
-
-//struct Reminder: Hashable{
-//    var remindValue: String
-//    var selectedOption: String
-//}

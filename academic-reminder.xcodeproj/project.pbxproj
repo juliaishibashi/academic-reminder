@@ -21,6 +21,8 @@
 		A39847D52C81CF4F006B72FF /* academic_reminderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39847C62C81CF4F006B72FF /* academic_reminderApp.swift */; };
 		A3B7FE462CE351F6003010EF /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B7FE452CE351E8003010EF /* Reminder.swift */; };
 		A3BF2A7E2CF53645004F3138 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BF2A7D2CF5363D004F3138 /* AppDelegate.swift */; };
+		A3C28A142D1287310096D1ED /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C28A132D1287310096D1ED /* NotificationManager.swift */; };
+		A3C28A152D1287310096D1ED /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C28A132D1287310096D1ED /* NotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,7 @@
 		A3B7FE452CE351E8003010EF /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		A3BF2A7D2CF5363D004F3138 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3BF2A8B2CF56ED5004F3138 /* academic-reminderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "academic-reminderUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3C28A132D1287310096D1ED /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -131,10 +134,11 @@
 		A39847C92C81CF4F006B72FF /* academic-reminder */ = {
 			isa = PBXGroup;
 			children = (
+				A39847C62C81CF4F006B72FF /* academic_reminderApp.swift */,
 				A3BF2A7D2CF5363D004F3138 /* AppDelegate.swift */,
+				A3C28A132D1287310096D1ED /* NotificationManager.swift */,
 				A39847B92C81CF4F006B72FF /* Model */,
 				A39847C52C81CF4F006B72FF /* View */,
-				A39847C62C81CF4F006B72FF /* academic_reminderApp.swift */,
 				A39847C72C81CF4F006B72FF /* Assets.xcassets */,
 				A302BD7C2CF5DC9D0049B662 /* Info.plist */,
 			);
@@ -252,6 +256,7 @@
 				A39847D42C81CF4F006B72FF /* Home.swift in Sources */,
 				A39847CF2C81CF4F006B72FF /* ReminderView.swift in Sources */,
 				A39847D32C81CF4F006B72FF /* GradesView.swift in Sources */,
+				A3C28A142D1287310096D1ED /* NotificationManager.swift in Sources */,
 				A39847CC2C81CF4F006B72FF /* AssignmentsHolderView.swift in Sources */,
 				A39847CA2C81CF4F006B72FF /* DateValue.swift in Sources */,
 				A39847D02C81CF4F006B72FF /* CoursesView.swift in Sources */,
@@ -265,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3C28A152D1287310096D1ED /* NotificationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
